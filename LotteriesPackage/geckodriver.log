@@ -1,0 +1,14 @@
+1657968768296	geckodriver	INFO	Listening on 127.0.0.1:64969
+1657968771333	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "64970" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\ravip\\AppData\\Local\\Temp\\rust_mozprofileeAH9XQ"
+1657968771797	Marionette	INFO	Marionette enabled
+1657968771803	Marionette	INFO	Listening on port 64983
+WebDriver BiDi listening on ws://localhost:64970
+Read port: 64983
+1657968773131	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\ravip\\AppData\\Local\\Temp\\rust_mozprofileeAH9XQ\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:64970/devtools/browser/1bd4cf78-b2ae-4048-b4e4-5ca06cb9b67a
+JavaScript warning: https://assets.adobedtm.com/6f918773eb75/9d7c1b489f0a/launch-f32438423f37.min.js, line 11: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.thelott.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.thelott.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://tr.snapchat.com"
+1657968776839	Marionette	INFO	Stopped listening on port 64983
