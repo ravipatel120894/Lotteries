@@ -85,7 +85,7 @@ time.sleep(2)
 driver.find_element(By.XPATH, "//div[@class='header-logo-size default-logo-image']").click()
 time.sleep(2)
 
-print('Test Play page in NSW')
+print('Test Play powerball in NSW')
 driver.find_element(By.XPATH, "//img[@class='jurisdiction-symbol au-target']").click()
 time.sleep(2)
 driver.find_element(By.XPATH, "//ux-dialog-body/div[2]/div[2]/img[1]").click()
@@ -172,7 +172,7 @@ assert empty.text == 'Empty Cart'
 driver.find_element(By.XPATH, "//button[normalize-space()='Yes']").click()
 time.sleep(2)
 
-print('Test Play page in QLD')
+print('Test Play powerball in QLD')
 driver.find_element(By.XPATH, "//img[@class='jurisdiction-symbol au-target']").click()
 time.sleep(2)
 driver.find_element(By.XPATH, "//ux-dialog-body/div[4]/div[2]/img[1]").click()
@@ -314,6 +314,134 @@ articles = driver.find_elements(By.XPATH, "//h3[normalize-space()='Promoted arti
 assert articles.text == 'Promoted articles'
 driver.find_element(By.XPATH, "//a[@title='Back to the Lott']").click()
 driver.implicitly_wait(10)
+time.sleep(2)
+driver.find_element(By.XPATH, "//div[@class='header-logo-size default-logo-image']").click()
+time.sleep(2)
+
+print('Test Play Saturday Lotto in NSW')
+driver.find_element(By.XPATH, "//img[@class='jurisdiction-symbol au-target']").click()
+time.sleep(2)
+driver.find_element(By.XPATH, "//ux-dialog-body/div[2]/div[2]/img[1]").click()
+time.sleep(3)
+driver.find_element(By.XPATH, "//li[@class='au-target tattslotto state-nsw']//div[@class='brand-circle-logo']").click()
+time.sleep(1)
+play_saturday = driver.find_elements(By.XPATH, "//h1[normalize-space()='Play Saturday Lotto']")[0]
+assert play_saturday.text == 'Play Saturday Lotto'
+driver.find_element(By.XPATH, "//span[@class='au-target quickpick-title']").click()
+time.sleep(1)
+quickpick = driver.find_elements(By.XPATH, "//span[normalize-space()='Grab a QuickPick']")[0]
+print(quickpick.text)
+assert quickpick.text == 'Grab a QuickPick'
+time.sleep(2)
+driver.execute_script("window.scrollBy(0,500)", "")
+time.sleep(2)
+driver.find_element(By.XPATH,
+                    "//body/div[@id='pagewrapper']/div[contains(@class,'content-wrapper')]/div[contains(@class,'container')]/div[contains(@class,'row')]/div[contains(@class,'columns xsmall-12')]/div[contains(@class,'purchase-app')]/section[contains(@class,'purchase-content')]/div[contains(@class,'au-target purchase-game-content')]/play-tabs[contains(@class,'au-target')]/section[contains(@class,'au-target play-tabs state-nsw tattslotto')]/loading-panel[contains(@class,'au-target')]/section[contains(@class,'au-target loading-panel')]/quickpick[contains(@class,'au-target')]/section[contains(@class,'au-target quickpick state-nsw')]/div[contains(@class,'bg quickpick-background-color-dark')]/div[contains(@class,'content')]/ul[contains(@class,'au-target')]/li[2]/div[1]").click()
+time.sleep(3)
+driver.execute_script("window.scrollBy(0,-500)", "")
+time.sleep(2)
+driver.find_element(By.XPATH, "//span[@class='au-target subscribe-title']").click()
+time.sleep(2)
+sub = driver.find_elements(By.XPATH, "//span[@class='main-header']")[0]
+assert sub.text == "Subscriptions"
+time.sleep(2)
+driver.find_element(By.XPATH, "//span[@class='au-target marked-entry-title']").click()
+time.sleep(2)
+driver.find_element(By.XPATH, "//span[normalize-space()='System']").click()
+time.sleep(1)
+driver.execute_script("window.scrollBy(0,700)", "")
+select_system = Select(driver.find_element(By.XPATH, "//select[contains(@value.one-way,'state.selectedSystemOption')]"))
+select_system.select_by_visible_text("System 10")
+time.sleep(2)
+driver.find_element(By.XPATH, "//span[normalize-space()='Standard']").click()
+time.sleep(2)
+driver.execute_script("window.scrollBy(0,700)", "")
+select_power = Select(
+    driver.find_element(By.XPATH, "//select[contains(@value.one-way,'state.selectedGameCountOption')]"))
+select_power.select_by_visible_text("10 Games - $8.25")
+driver.execute_script("window.scrollBy(0,500)", "")
+time.sleep(2)
+driver.find_element(By.XPATH,
+                    "/html/body/div[1]/div[2]/div/div[3]/div[3]/div/section/div/play-tabs/section/loading-panel/section/marked-entry/section/div[5]/marked-entry-selections/section/div[1]/div[2]/button[1]/span").click()
+time.sleep(2)
+driver.find_element(By.XPATH,
+                    "/html/body/div[1]/div[2]/div/div[3]/div[3]/div/section/div/play-tabs/section/loading-panel/section/marked-entry/section/div[5]/marked-entry-selections/section/div[1]/div[2]/button[2]/span").click()
+time.sleep(2)
+driver.find_element(By.XPATH,
+                    "/html/body/div[1]/div[2]/div/div[3]/div[3]/div/section/div/play-tabs/section/loading-panel/section/marked-entry/section/div[5]/marked-entry-selections/section/div[1]/div[2]/button[1]/span").click()
+time.sleep(2)
+driver.find_element(By.XPATH, "//button[contains(@data-test-id,'fixed-add-cart-button')]").click()
+time.sleep(2)
+driver.find_element(By.XPATH, "//a[@class='au-target cart-container mouse-over-area']//*[name()='svg']").click()
+time.sleep(2)
+driver.find_element(By.XPATH, "//a[normalize-space()='Empty Cart']").click()
+time.sleep(2)
+empty = driver.find_elements(By.XPATH, "//h2[normalize-space()='Empty Cart']")[0]
+assert empty.text == 'Empty Cart'
+driver.find_element(By.XPATH, "//button[normalize-space()='Yes']").click()
+time.sleep(2)
+
+print('Test Play Saturday Lotto in QLD')
+driver.find_element(By.XPATH, "//img[@class='jurisdiction-symbol au-target']").click()
+time.sleep(2)
+driver.find_element(By.XPATH, "//ux-dialog-body/div[4]/div[2]/img[1]").click()
+time.sleep(3)
+driver.find_element(By.XPATH, "//li[@class='au-target tattslotto state-qld']//a[@class='au-target']").click()
+time.sleep(1)
+play_saturday = driver.find_elements(By.XPATH, "//h1[normalize-space()='Play Saturday Gold Lotto']")[0]
+assert play_saturday.text == 'Play Saturday Gold Lotto'
+driver.find_element(By.XPATH, "//span[@class='au-target quickpick-title']").click()
+time.sleep(1)
+quickpick = driver.find_elements(By.XPATH, "//span[normalize-space()='Grab a QuickPick']")[0]
+print(quickpick.text)
+assert quickpick.text == 'Grab a QuickPick'
+time.sleep(2)
+driver.execute_script("window.scrollBy(0,500)", "")
+time.sleep(2)
+driver.find_element(By.XPATH,
+                    "//body/div[@id='pagewrapper']/div[contains(@class,'content-wrapper')]/div[contains(@class,'container')]/div[contains(@class,'row')]/div[contains(@class,'columns xsmall-12')]/div[contains(@class,'purchase-app')]/section[contains(@class,'purchase-content')]/div[contains(@class,'au-target purchase-game-content')]/play-tabs[contains(@class,'au-target')]/section[contains(@class,'au-target play-tabs state-qld tattslotto')]/loading-panel[contains(@class,'au-target')]/section[contains(@class,'au-target loading-panel')]/quickpick[contains(@class,'au-target')]/section[contains(@class,'au-target quickpick state-qld')]/div[contains(@class,'bg quickpick-background-color-dark')]/div[contains(@class,'content')]/ul[contains(@class,'au-target')]/li[2]/div[1]").click()
+time.sleep(3)
+driver.execute_script("window.scrollBy(0,-500)", "")
+time.sleep(2)
+driver.find_element(By.XPATH, "//span[@class='au-target subscribe-title']").click()
+time.sleep(2)
+sub = driver.find_elements(By.XPATH, "//span[@class='main-header']")[0]
+assert sub.text == "Subscriptions"
+time.sleep(2)
+driver.find_element(By.XPATH, "//span[@class='au-target marked-entry-title']").click()
+time.sleep(2)
+driver.find_element(By.XPATH, "//span[normalize-space()='System']").click()
+time.sleep(1)
+driver.execute_script("window.scrollBy(0,700)", "")
+select_system = Select(driver.find_element(By.XPATH, "//select[contains(@value.one-way,'state.selectedSystemOption')]"))
+select_system.select_by_visible_text("System 10")
+time.sleep(2)
+driver.find_element(By.XPATH, "//span[normalize-space()='Standard']").click()
+time.sleep(2)
+driver.execute_script("window.scrollBy(0,700)", "")
+select_power = Select(
+    driver.find_element(By.XPATH, "//select[contains(@value.one-way,'state.selectedGameCountOption')]"))
+select_power.select_by_visible_text("10 Games - $8.25")
+driver.execute_script("window.scrollBy(0,500)", "")
+time.sleep(2)
+driver.find_element(By.XPATH,
+                    "/html/body/div[1]/div[2]/div/div[3]/div[3]/div/section/div/play-tabs/section/loading-panel/section/marked-entry/section/div[5]/marked-entry-selections/section/div[1]/div[2]/button[1]/span").click()
+time.sleep(2)
+driver.find_element(By.XPATH,
+                    "/html/body/div[1]/div[2]/div/div[3]/div[3]/div/section/div/play-tabs/section/loading-panel/section/marked-entry/section/div[5]/marked-entry-selections/section/div[1]/div[2]/button[2]/span").click()
+time.sleep(2)
+driver.find_element(By.XPATH,
+                    "/html/body/div[1]/div[2]/div/div[3]/div[3]/div/section/div/play-tabs/section/loading-panel/section/marked-entry/section/div[5]/marked-entry-selections/section/div[1]/div[2]/button[1]/span").click()
+time.sleep(2)
+driver.find_element(By.XPATH, "//button[contains(@data-test-id,'fixed-add-cart-button')]").click()
+time.sleep(2)
+driver.find_element(By.XPATH, "//a[@class='au-target cart-container mouse-over-area']//*[name()='svg']").click()
+time.sleep(2)
+driver.find_element(By.XPATH, "//a[normalize-space()='Empty Cart']").click()
+time.sleep(2)
+empty = driver.find_elements(By.XPATH, "//h2[normalize-space()='Empty Cart']")[0]
+assert empty.text == 'Empty Cart'
+driver.find_element(By.XPATH, "//button[normalize-space()='Yes']").click()
 time.sleep(2)
 
 driver.close()
