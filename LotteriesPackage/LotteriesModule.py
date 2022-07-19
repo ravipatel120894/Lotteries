@@ -352,7 +352,7 @@ time.sleep(1)
 driver.execute_script("window.scrollBy(0,700)", "")
 select_system = Select(driver.find_element(By.XPATH, "//select[contains(@value.one-way,'state.selectedSystemOption')]"))
 select_system.select_by_visible_text("System 10")
-time.sleep(2)
+time.sleep(3)
 driver.find_element(By.XPATH, "//span[normalize-space()='Standard']").click()
 time.sleep(2)
 driver.execute_script("window.scrollBy(0,700)", "")
@@ -380,13 +380,16 @@ empty = driver.find_elements(By.XPATH, "//h2[normalize-space()='Empty Cart']")[0
 assert empty.text == 'Empty Cart'
 driver.find_element(By.XPATH, "//button[normalize-space()='Yes']").click()
 time.sleep(2)
+driver.find_element(By.XPATH, "//div[@class='header-logo-size default-logo-image']").click()
+time.sleep(2)
+
 
 print('Test Play Saturday Lotto in QLD')
 driver.find_element(By.XPATH, "//img[@class='jurisdiction-symbol au-target']").click()
 time.sleep(2)
 driver.find_element(By.XPATH, "//ux-dialog-body/div[4]/div[2]/img[1]").click()
 time.sleep(3)
-driver.find_element(By.XPATH, "//li[@class='au-target tattslotto state-qld']//a[@class='au-target']").click()
+driver.find_element(By.XPATH, "//li[@class='au-target tattslotto state-qld']//div[@class='brand-circle-logo']").click()
 time.sleep(1)
 play_saturday = driver.find_elements(By.XPATH, "//h1[normalize-space()='Play Saturday Gold Lotto']")[0]
 assert play_saturday.text == 'Play Saturday Gold Lotto'
@@ -442,6 +445,8 @@ time.sleep(2)
 empty = driver.find_elements(By.XPATH, "//h2[normalize-space()='Empty Cart']")[0]
 assert empty.text == 'Empty Cart'
 driver.find_element(By.XPATH, "//button[normalize-space()='Yes']").click()
+time.sleep(2)
+driver.find_element(By.XPATH, "//div[@class='header-logo-size default-logo-image']").click()
 time.sleep(2)
 
 driver.close()
