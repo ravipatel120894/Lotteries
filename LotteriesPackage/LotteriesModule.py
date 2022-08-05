@@ -59,10 +59,10 @@ driver.find_element(By.XPATH, "//span[normalize-space()='Welcome back! Ready to 
 time.sleep(2)
 driver.find_element(By.XPATH, "//div[contains(text(),'Log in')]//*[name()='svg']").click()
 driver.implicitly_wait(10)
-driver.find_element(By.XPATH, "//div[contains(@class,'_leftForm_njose_8')]//div[1]//div[1]//div[1]").is_displayed()
+#driver.find_element(By.XPATH, "//div[contains(@class,'_leftForm_njose_8')]//div[1]//div[1]//div[1]").is_displayed()
 driver.find_element(By.XPATH, "//div[contains(text(),'Send code')]").click()
-driver.find_element(By.XPATH,
-                    "//div[contains(@class,'_oneTimePasswordForm_njose_29')]//div[1]//div[1]//div[1]").is_displayed()
+#driver.find_element(By.XPATH,
+#                    "//div[contains(@class,'_oneTimePasswordForm_njose_29')]//div[1]//div[1]//div[1]").is_displayed()
 driver.find_element(By.XPATH, "//h4[normalize-space()='Join']").click()
 driver.implicitly_wait(10)
 driver.find_element(By.XPATH, "//h1[1]").is_displayed()
@@ -323,6 +323,7 @@ driver.find_element(By.XPATH, "//img[@class='jurisdiction-symbol au-target']").c
 time.sleep(2)
 driver.find_element(By.XPATH, "//ux-dialog-body/div[2]/div[2]/img[1]").click()
 time.sleep(3)
+driver.execute_script("window.scrollBy(0,800)", "")
 driver.find_element(By.XPATH, "//li[@class='au-target tattslotto state-nsw']//div[@class='brand-circle-logo']").click()
 time.sleep(1)
 play_saturday = driver.find_elements(By.XPATH, "//h1[normalize-space()='Play Saturday Lotto']")[0]
@@ -335,9 +336,10 @@ assert quickpick.text == 'Grab a QuickPick'
 time.sleep(2)
 driver.execute_script("window.scrollBy(0,500)", "")
 time.sleep(2)
-driver.find_element(By.XPATH,
-                    "//body/div[@id='pagewrapper']/div[contains(@class,'content-wrapper')]/div[contains(@class,'container')]/div[contains(@class,'row')]/div[contains(@class,'columns xsmall-12')]/div[contains(@class,'purchase-app')]/section[contains(@class,'purchase-content')]/div[contains(@class,'au-target purchase-game-content')]/play-tabs[contains(@class,'au-target')]/section[contains(@class,'au-target play-tabs state-nsw tattslotto')]/loading-panel[contains(@class,'au-target')]/section[contains(@class,'au-target loading-panel')]/quickpick[contains(@class,'au-target')]/section[contains(@class,'au-target quickpick state-nsw')]/div[contains(@class,'bg quickpick-background-color-dark')]/div[contains(@class,'content')]/ul[contains(@class,'au-target')]/li[2]/div[1]").click()
+driver.find_element(By.XPATH, "//body/div[@id='pagewrapper']/div[contains(@class,'content-wrapper')]/div[contains(@class,'container')]/div[contains(@class,'row')]/div[contains(@class,'columns xsmall-12')]/div[contains(@class,'purchase-app')]/section[contains(@class,'purchase-content')]/div[contains(@class,'au-target purchase-game-content')]/play-tabs[contains(@class,'au-target')]/section[contains(@class,'au-target play-tabs state-nsw tattslotto')]/loading-panel[contains(@class,'au-target')]/section[contains(@class,'au-target loading-panel')]/quickpick[contains(@class,'au-target')]/section[contains(@class,'au-target quickpick state-nsw')]/div[contains(@class,'bg quickpick-background-color-dark')]/div[contains(@class,'content')]/ul[contains(@class,'au-target')]/li[1]/div[1]").click()
 time.sleep(3)
+driver.find_element(By.XPATH,"//div[@class='au-target dialog-close-icon tattslotto']").click()
+time.sleep(2)
 driver.execute_script("window.scrollBy(0,-500)", "")
 time.sleep(2)
 driver.find_element(By.XPATH, "//span[@class='au-target subscribe-title']").click()
@@ -406,6 +408,8 @@ driver.find_element(By.XPATH,
 time.sleep(3)
 driver.execute_script("window.scrollBy(0,-500)", "")
 time.sleep(2)
+driver.find_element(By.XPATH,"//div[@class='au-target dialog-close-icon tattslotto']").click()
+time.sleep(2)
 driver.find_element(By.XPATH, "//span[@class='au-target subscribe-title']").click()
 time.sleep(2)
 sub = driver.find_elements(By.XPATH, "//span[@class='main-header']")[0]
@@ -454,7 +458,7 @@ driver.close()
 # Things to do
 # Calculate princes and verify total with cart page
 # Make a base class for webdriver
-# Verity and compare data with other regions
+# Verify and compare data with other regions
 # If one test-case fail, other should be continued till end
 # It should provide test case report in last
 # Write script to take dynamic value in locators from 0 to n by using for loop
